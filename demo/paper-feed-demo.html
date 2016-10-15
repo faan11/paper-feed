@@ -1,0 +1,28 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../iron-icons/iron-icons.html">
+<link rel="import" href="../paper-feed.html">
+
+
+<dom-module id="paper-feed-demo">
+  <template>
+    <style>
+      :host {
+        font-family: sans-serif;
+      };
+    </style>
+  
+    <h3>Statically-configured icon-toggles</h3>
+    
+    <paper-feed message-title="Sasha grey" message-text="se so bella!" message-count="1" profile-img="../images/paper_default_picture.jpg" feed-image="../images/paper_default_img.jpg" share-img="../images/share.svg"></paper-feed>
+    <!-- use a computed binding to generate the message -->
+    <div><span>[[message(isFav)]]</span></div>
+
+  </template>
+  
+  <script>
+    Polymer({
+      is: "paper-feed-demo",
+      
+    });
+  </script>
+</dom-module>

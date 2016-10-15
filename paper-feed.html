@@ -1,0 +1,112 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../paper-listbox/paper-listbox.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="../iron-icons/communication-icons.html">
+<dom-module id="paper-feed">
+
+
+  <template>
+
+    <style>
+      /* local DOM styles go here */
+      :host {
+        
+        }
+        paper-listbox{
+            width:100%;        
+        }
+        paper-input{
+            width:100%;        
+        }
+        .flex2child {
+          @apply(--layout-flex-2);
+        }
+        .container {
+          @apply(--layout-horizontal);
+          @apply(--layout-justified);
+    
+        }
+        .flex-horizontal-with-ratios {
+            @apply(--layout-horizontal);
+        }
+        .flex-horizontal {
+        @apply(--layout-horizontal);
+      }
+      .flexchild {
+        @apply(--layout-flex);
+      }
+      .card{
+        padding-left: 0px;
+        padding-right: 10px;      
+      }
+      .card paper-icon-button{
+        position:relative;
+        top:-8px;      
+      }
+      .card-content{
+        padding-bottom: 0px;
+        margin-bottom: 4px;
+        padding-right: 0px;
+        padding-top: 0px;      
+        
+      }
+      .container{
+        height:25px;      
+      }
+      .message-text{
+            font-size:10px;      
+      }
+      .message-title{
+            font-size:11px;
+            font-weight: bold;      
+      }
+    </style>
+    
+    <!-- local DOM goes here -->
+    <paper-card>
+    	                               <div class="card-content card black">
+    	                                   <div class="image">
+    	                                   	  <img style="width:200px" src="{{feed-image}}">
+    	                                   </div>
+    	                               </div>
+                                       <div class=" card gray">
+                                        <div class="container flex">
+                                            <div> 
+                                                <paper-icon-button  style="width:35px;height:35px;" src="{{profile-img}}" ></paper-icon-button>
+                                             </div>                                   
+                                             <div class="flexchild"> 
+                                                 <paper-icon-button  style="width:35px;height:35px;" src="{{share-img}}" ></paper-icon-button>
+                                             </div>
+                                             <div style="font-size:10px;font-weight:bold"><iron-icon style="width:20px;height:20px;" icon="communication:message"></iron-icon> {{message-count}} </div>
+                                        </div>
+                                       </div>
+                                       <div class="card-actions">
+                                                <div class="message-title">{{message-title}}</div> 
+                                                <div class="message-text">{{message-text}}</div>                                        
+                                       </div>
+    </paper-card>
+  </template>
+
+  <script>
+  PaperFeed = Polymer({
+    is: 'paper-feed',
+    hostAttributes: {
+     'message-title': 'Title',
+     'message-text': 'Ciao Bello',
+     'message-count': '0',
+     "profile-img":"",
+     "share-img":"",
+     "feed-image":""
+     
+    }
+
+
+  });
+  </script>
+
+</dom-module>
+
