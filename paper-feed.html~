@@ -70,7 +70,7 @@
     </style>
     
     <!-- local DOM goes here -->
-    <paper-card>
+    <paper-card >
     	                               <div class="card-content card black">
     	                                   <div class="image">
     	                                   	  <img style="height:200px;width:116px" src="{{feed-image}}">
